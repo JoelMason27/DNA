@@ -1,0 +1,15 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Screens/Main Menu/ScreenMainMenu" itemID="51c9368e-000002f6" linkageExportForAS="true" linkageClassName="com.view.screen.ScreenMainMenu" lastModified="1372152163" isSpriteSubclass="true">
+  <timeline>
+    <DOMTimeline name="ScreenMainMenu">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

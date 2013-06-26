@@ -1,0 +1,65 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" backgroundColor="#999999" width="800" height="600" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Windows" versionInfo="Saved by Adobe Flash Windows 12.0 build 481" majorVersion="12" buildNumber="481" viewAngle3D="74.2651684569298" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false">
+     <folders>
+          <DOMFolderItem name="Screens" itemID="51c93623-000002e9" isExpanded="true"/>
+          <DOMFolderItem name="Screens/Game" itemID="51c940f1-00000305" isExpanded="true"/>
+          <DOMFolderItem name="Screens/Main Menu" itemID="51c9362c-000002f2" isExpanded="true"/>
+          <DOMFolderItem name="Widgets" itemID="51c93626-000002ed" isExpanded="true"/>
+          <DOMFolderItem name="Widgets/Game Block" itemID="51c941c9-00000314" isExpanded="true"/>
+          <DOMFolderItem name="Widgets/Game Board" itemID="51c9413a-0000030b" isExpanded="true"/>
+     </folders>
+     <fonts>
+          <DOMFontItem name="Default" itemID="51c94541-00000319" font="TimesNewRomanPSMT" size="0" id="1" sourceLastImported="1372144961"/>
+     </fonts>
+     <symbols>
+          <Include href="Screens/Game/ScreenGame.xml" itemID="51c940e2-000002ff" lastModified="1372152217"/>
+          <Include href="Screens/Main Menu/ScreenMainMenu.xml" itemID="51c9368e-000002f6" lastModified="1372152163"/>
+          <Include href="Widgets/Game Block/Block.xml" itemID="51c941ee-00000316" lastModified="1372155109"/>
+          <Include href="Widgets/Game Board/Board.xml" itemID="51c94156-0000030d" lastModified="1372152157"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="Scene 1">
+               <layers>
+                    <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <persistentData>
+          <PD n="swf.folder.path" v="C:/Users/Joel/Desktop/FlashDevelop/DNA/code/flash/"/>
+          <PD n="com.air.artemis.pubcaptive" v="false"/>
+          <PD n="com.air.artemis.pubipa" v="false"/>
+          <PD n="com.air.artemis.pubair" v="true"/>
+          <PD n="flash.swf.basename" v="DNA"/>
+          <PD n="com.air.sdk.path"/>
+          <PD n="com.air.artemis.pubexe" v="false"/>
+          <PD n="com.air.artemis.airdest" v="DNA.air"/>
+     </persistentData>
+     <PrinterSettings/>
+     <publishHistory>
+          <PublishItem publishSize="286042" publishTime="1372156302"/>
+          <PublishItem publishSize="286050" publishTime="1372156254"/>
+          <PublishItem publishSize="286047" publishTime="1372156231"/>
+          <PublishItem publishSize="286058" publishTime="1372156208"/>
+          <PublishItem publishSize="286054" publishTime="1372156196"/>
+          <PublishItem publishSize="286052" publishTime="1372156153"/>
+          <PublishItem publishSize="286052" publishTime="1372156117"/>
+          <PublishItem publishSize="286048" publishTime="1372156025"/>
+          <PublishItem publishSize="286039" publishTime="1372155983"/>
+          <PublishItem publishSize="286076" publishTime="1372155952"/>
+          <PublishItem publishSize="286034" publishTime="1372155845"/>
+          <PublishItem publishSize="286030" publishTime="1372155772"/>
+          <PublishItem publishSize="286008" publishTime="1372155707"/>
+          <PublishItem publishSize="680" publishTime="1372155701"/>
+          <PublishItem publishSize="286014" publishTime="1372155567"/>
+          <PublishItem publishSize="286006" publishTime="1372155520"/>
+          <PublishItem publishSize="285994" publishTime="1372155391"/>
+          <PublishItem publishSize="285988" publishTime="1372155344"/>
+          <PublishItem publishSize="285989" publishTime="1372155304"/>
+          <PublishItem publishSize="285990" publishTime="1372155248"/>
+     </publishHistory>
+</DOMDocument>
