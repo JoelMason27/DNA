@@ -1,6 +1,7 @@
 package com.view.widget 
 {
 	import cerebralfix.felix.signal.FLXSignal;
+	import cerebralfix.zill.flash.ZILMovieClip;
 	import com.util.Utility;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -14,7 +15,7 @@ package com.view.widget
 	 * ...
 	 * @author Joel Mason
 	 */
-	public class Block extends MovieClip
+	public class Block extends ZILMovieClip
 	{
 		private var m_text:TextField;
 		public var m_blockClickedSignal:FLXSignal = new FLXSignal();
@@ -27,13 +28,12 @@ package com.view.widget
 		protected function initialize(e:Event = null):void
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, initialize);
-			addEventListener(Event.REMOVED_FROM_STAGE, dispose);
-			this.addEventListener(MouseEvent.CLICK, onMouseClick);
 			m_text = new TextField();
 			m_text.width = 50;
 			m_text.height = 50;
 			m_text.selectable = false;
-			addChild(m_text);
+			m_text.mouseEnabled = false;
+			this.addChild(m_text);
 			text = Utility.getBasePairChar();
 		}
 		
@@ -50,14 +50,6 @@ package com.view.widget
 		public function get text():String 
 		{
 			return m_text.text;	
-		}
-		
-		public function dispose(e:Event = null):void
-		{
-			removeEventListener(MouseEvent.CLICK, onMouseClick);
-			removeEventListener(Event.REMOVED_FROM_STAGE, dispose);
-			m_blockClickedSignal.removeAllListeners();
-			this.removeChildren();
 		}
 	}
 }

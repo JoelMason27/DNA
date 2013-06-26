@@ -51,7 +51,7 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
-    <!-- example: <element path="..." /> -->
+    <element path="libs\felix_0_0_4827_DEBUG.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

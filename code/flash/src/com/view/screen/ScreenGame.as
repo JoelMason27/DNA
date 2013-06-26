@@ -13,6 +13,8 @@ package com.view.screen
 		public function ScreenGame() 
 		{
 			m_board = new Board();
+			m_board.x = 200;
+			m_board.y = 100;
 			addChild(m_board);
 		}
 		
