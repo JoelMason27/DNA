@@ -51,5 +51,10 @@ package com.view.widget
 		{
 			return m_text.text;	
 		}
+		
+		override public function toString():String 
+		{
+			return m_text.text;
+		}
 	}
 }
