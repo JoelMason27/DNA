@@ -1,5 +1,6 @@
 package com.controller 
 {
+	import com.view.widget.Base_A;
 	import com.view.widget.Block;
 	/**
 	 * ...
@@ -27,7 +28,7 @@ package com.controller
 				_boardBlocks.push(new Vector.<Block>);
 				for (var _j:int = 0; _j < p_tilesY; _j++)
 				{
-					var _block:Block = new Block();
+					var _block:Base_A = new Base_A();
 					_boardBlocks[_i].push(_block);
 				}
 			}

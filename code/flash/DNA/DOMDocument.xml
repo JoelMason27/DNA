@@ -31,8 +31,8 @@
      </timelines>
      <persistentData>
           <PD n="swf.folder.path" v="C:/Users/Joel/Desktop/FlashDevelop/DNA/code/flash/"/>
-          <PD n="com.air.artemis.pubipa" v="false"/>
           <PD n="com.air.artemis.pubcaptive" v="false"/>
+          <PD n="com.air.artemis.pubipa" v="false"/>
           <PD n="com.air.artemis.pubair" v="true"/>
           <PD n="flash.swf.basename" v="DNA"/>
           <PD n="com.air.sdk.path"/>
@@ -41,25 +41,25 @@
      </persistentData>
      <PrinterSettings/>
      <publishHistory>
-          <PublishItem publishSize="286589" publishTime="1372243351"/>
-          <PublishItem publishSize="286583" publishTime="1372243345"/>
-          <PublishItem publishSize="286633" publishTime="1372243278"/>
-          <PublishItem publishSize="746" publishTime="1372243268"/>
-          <PublishItem publishSize="744" publishTime="1372243243"/>
-          <PublishItem publishSize="286632" publishTime="1372243224"/>
-          <PublishItem publishSize="286595" publishTime="1372242979"/>
-          <PublishItem publishSize="286583" publishTime="1372242945"/>
-          <PublishItem publishSize="286567" publishTime="1372242899"/>
-          <PublishItem publishSize="286593" publishTime="1372242643"/>
-          <PublishItem publishSize="286566" publishTime="1372242608"/>
-          <PublishItem publishSize="286565" publishTime="1372242588"/>
-          <PublishItem publishSize="286570" publishTime="1372242575"/>
-          <PublishItem publishSize="286569" publishTime="1372242540"/>
-          <PublishItem publishSize="286573" publishTime="1372242526"/>
-          <PublishItem publishSize="286570" publishTime="1372242494"/>
-          <PublishItem publishSize="286593" publishTime="1372242291"/>
-          <PublishItem publishSize="286592" publishTime="1372242246"/>
-          <PublishItem publishSize="286590" publishTime="1372242204"/>
-          <PublishItem publishSize="746" publishTime="1372242197"/>
+          <PublishItem publishSize="288241" publishTime="1372412924"/>
+          <PublishItem publishSize="288246" publishTime="1372411932"/>
+          <PublishItem publishSize="288250" publishTime="1372411879"/>
+          <PublishItem publishSize="288242" publishTime="1372411845"/>
+          <PublishItem publishSize="288259" publishTime="1372411683"/>
+          <PublishItem publishSize="288264" publishTime="1372411662"/>
+          <PublishItem publishSize="288265" publishTime="1372411642"/>
+          <PublishItem publishSize="288262" publishTime="1372411619"/>
+          <PublishItem publishSize="288259" publishTime="1372411596"/>
+          <PublishItem publishSize="288237" publishTime="1372410617"/>
+          <PublishItem publishSize="288237" publishTime="1372410455"/>
+          <PublishItem publishSize="288237" publishTime="1372410434"/>
+          <PublishItem publishSize="288240" publishTime="1372410398"/>
+          <PublishItem publishSize="288251" publishTime="1372410348"/>
+          <PublishItem publishSize="288225" publishTime="1372410301"/>
+          <PublishItem publishSize="740" publishTime="1372410267"/>
+          <PublishItem publishSize="740" publishTime="1372410199"/>
+          <PublishItem publishSize="738" publishTime="1372409961"/>
+          <PublishItem publishSize="287600" publishTime="1372409364"/>
+          <PublishItem publishSize="287594" publishTime="1372409332"/>
      </publishHistory>
 </DOMDocument>

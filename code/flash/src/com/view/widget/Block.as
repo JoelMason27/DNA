@@ -34,7 +34,7 @@ package com.view.widget
 			m_text.selectable = false;
 			m_text.mouseEnabled = false;
 			this.addChild(m_text);
-			text = Utility.getBasePairChar();
+			text = "N/A";
 		}
 		
 		private function onMouseClick(e:Event = null):void

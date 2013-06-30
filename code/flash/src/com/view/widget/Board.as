@@ -1,5 +1,7 @@
 package com.view.widget 
 {
+	import cerebralfix.felix.signal.FLXSignal;
+	import cerebralfix.felix.type.array.FLXTriggeredArray;
 	import cerebralfix.zill.flash.ZILMovieClip;
 	import com.controller.BoardController;
 	import com.greensock.TweenLite;
@@ -10,6 +12,7 @@ package com.view.widget
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
+	import flash.utils.Proxy;
 	/**
 	 * ...
 	 * @author Joel Mason
@@ -20,21 +23,22 @@ package com.view.widget
 		static const TILES_Y:int = 5;
 		static const TILE_WIDTH:int = 50;
 		static const BOARD_SIZE:int = TILES_X * TILE_WIDTH;
-		public var m_boardBlocks:Vector.<Vector.<Block>>;
-		public var m_currentTilesSelected:Vector.<Block> = new Vector.<Block>;
+		public var m_boardBlocks:Vector.<Vector.<Block>>; 
+		public var m_currentTilesSelected:FLXTriggeredArray = new FLXTriggeredArray();
+		private var m_onMovedVectorChange:FLXSignal = new FLXSignal();
 		
 		private var m_lineOverlay:MovieClip = new MovieClip();
 		
 		public function Board() 
 		{
 			addEventListener(Event.ADDED_TO_STAGE, initialize);
-			//addEventListener(MouseEvent.CLICK, onMouseClick);
 			addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
 		}
 		
 		public function initialize(e:Event = null):void
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, initialize);
+			m_currentTilesSelected.changedSignal.addListener(onMovesChanged);
 			m_boardBlocks = BoardController.instance.newBoard(TILES_X, TILES_Y);
 			displayBoard();
 			addChild(m_lineOverlay);
@@ -71,9 +75,9 @@ package com.view.widget
 			}
 		}
 		
-		public function removeBlocks(p_vector:Vector.<Block>):void
+		public function removeBlocks(p_array:Array):void
 		{
-			for each (var _b:Block in p_vector)
+			for each (var _b:Block in p_array)
 			{
 				removeBlock(_b);
 			}
@@ -107,14 +111,14 @@ package com.view.widget
 			var _b:Block = e.target as Block;
 			if (_b)
 			{
-				if (m_currentTilesSelected.length == 0)
+				if (m_currentTilesSelected.value.length == 0)
 				{
 					m_currentTilesSelected.push(_b);
 				}
 				else
 				{
-					var _prevBlock:Block = m_currentTilesSelected[m_currentTilesSelected.length - 1];
-					var _index = m_currentTilesSelected.indexOf(_b);
+					var _prevBlock:Block = m_currentTilesSelected.value[m_currentTilesSelected.value.length - 1];
+					var _index = m_currentTilesSelected.value.indexOf(_b);
 					//if it's not in the current list, matches the block type and is adjacent to the previous block
 					if (_index == -1 && _prevBlock.text == _b.text && checkAdjacent(_b, _prevBlock))
 					{
@@ -125,30 +129,40 @@ package com.view.widget
 					else if (_index != -1)
 					{
 						//and it's 1 away from the end (i.e. length -2)
-						if (_index == m_currentTilesSelected.length - 2)
+						if (_index == m_currentTilesSelected.value.length - 2)
 						{
 							//we must've moved BACK to it, so pop the one after it
-							m_currentTilesSelected.pop();
+							var _removed:Block = m_currentTilesSelected.pop();
 						}
 					}
 				}
 			}
 		}
 		
+		public function onMovesChanged(_b:Block = null):void
+		{
+			updateLineOverlay();
+		}
+		
 		public function updateLineOverlay():void
 		{
 			m_lineOverlay.removeChildren();
-			if (m_currentTilesSelected.length > 0)
+			if (m_currentTilesSelected.value.length > 0)
 			{
 				var _line:Shape = new Shape();
-				_line.graphics.moveTo(m_currentTilesSelected[0].x + (TILE_WIDTH / 2), m_currentTilesSelected[0].y + (TILE_WIDTH / 2));
+				_line.graphics.moveTo(m_currentTilesSelected.value[0].x + (TILE_WIDTH / 2), m_currentTilesSelected.value[0].y + (TILE_WIDTH / 2));
 				_line.graphics.lineStyle(2, 0xFF0000);
 				
-				var drawLineTo:Function = function(item:Block, index:int, vector:Vector.<Block>):void {
+				var drawLineTo:Function = function(item:Block, index:int, array:Array):void {
 					this.graphics.lineTo(item.x + (TILE_WIDTH / 2), item.y + (TILE_WIDTH / 2));
 				};
 				
-				m_currentTilesSelected.forEach(drawLineTo, _line);
+				m_currentTilesSelected.value.forEach(drawLineTo, _line);
+				
+				_line.graphics.beginFill(0xFF0000);
+				_line.graphics.drawCircle(m_currentTilesSelected.value[m_currentTilesSelected.value.length - 1].x + (TILE_WIDTH/2),
+					m_currentTilesSelected.value[m_currentTilesSelected.value.length - 1].y + (TILE_WIDTH/2),
+					10);
 				
 				m_lineOverlay.addChild(_line);
 			}
@@ -193,15 +207,16 @@ package com.view.widget
 		
 		public function onMouseUp(e:MouseEvent = null):void
 		{
-			trace(m_currentTilesSelected.toString());
-			if (m_currentTilesSelected.length >= 3)
+			trace(m_currentTilesSelected.value.toString());
+			if (m_currentTilesSelected.value.length >= 3)
 			{
-				removeBlocks(m_currentTilesSelected);
+				removeBlocks(m_currentTilesSelected.value);
 				refillBoard();
 				dropRows();
 			}
 			m_lineOverlay.removeChildren();
-			m_currentTilesSelected = new Vector.<Block>;
+			m_currentTilesSelected = new FLXTriggeredArray();
+			m_currentTilesSelected.changedSignal.addListener(onMovesChanged);
 			removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 		}
